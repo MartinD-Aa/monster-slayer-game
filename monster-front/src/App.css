@@ -8,6 +8,7 @@ html {
 
 body {
   margin: 0;
+  background-color:#000000;
 }
 
 header {
@@ -23,6 +24,7 @@ section {
   width: 90%;
   max-width: 40rem;
   margin: auto;
+  background-color:#F5F5DC;
 }
 
 .healthbar {
@@ -62,15 +64,15 @@ section {
 
 button {
   font: inherit;
-  border: 1px solid #88005b;
-  background-color: #88005b;
+  border: 1px solid #5A5A5A;
+  background-color: #5A5A5A;
   color: white;
   padding: 1rem 2rem;
   border-radius: 12px;
   margin: 1rem;
   width: 12rem;
   cursor: pointer;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+  box-shadow: 1px 1px 4px;
 }
 
 button:focus {
@@ -79,8 +81,8 @@ button:focus {
 
 button:hover,
 button:active {
-  background-color: #af0a78;
-  border-color: #af0a78;
+  background-color: #808080;
+  border-color: #808080;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.26);
 }
 
