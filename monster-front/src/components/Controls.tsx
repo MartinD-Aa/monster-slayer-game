@@ -55,6 +55,13 @@ function Controls(props:
     props.roundCount(currentRound);
   }
 
+  function flee(){
+    const num = randomTall(8, 2)
+    if(num < 5){
+      
+    }
+  }
+
   function randomTall(min:number, max:number){
     return Math.floor(Math.random() * (max-min)) + min;
   }
@@ -67,7 +74,7 @@ function Controls(props:
       SPECIAL ATTACK
     </button>
     <button onClick={healPlayer}>HEAL</button>
-    <button >RUN</button>
+    <button onClick={}>RUN</button>
   </section>
   );
 }
