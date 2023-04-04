@@ -73,7 +73,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: node-app
-        path: ./monster-front
+        path: monster-front/build
 
     - name: 'Deploy to Azure WebApp'
       id: deploy-to-webapp
