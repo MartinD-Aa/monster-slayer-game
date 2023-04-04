@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/MartinD-Aa/monster-slayer-game/static/css/main.4968c2a9.css",
+    "main.js": "/MartinD-Aa/monster-slayer-game/static/js/main.1493efd5.js",
+    "index.html": "/MartinD-Aa/monster-slayer-game/index.html",
+    "main.4968c2a9.css.map": "/MartinD-Aa/monster-slayer-game/static/css/main.4968c2a9.css.map",
+    "main.1493efd5.js.map": "/MartinD-Aa/monster-slayer-game/static/js/main.1493efd5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4968c2a9.css",
+    "static/js/main.1493efd5.js"
+  ]
+}
