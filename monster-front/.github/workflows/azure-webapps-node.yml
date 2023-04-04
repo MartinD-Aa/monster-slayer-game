@@ -24,8 +24,8 @@ on:
 
 env:
   AZURE_WEBAPP_NAME: MonsterSlaying    # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
-  NODE_VERSION: '14.x'                # set this to the node version to use
+  AZURE_WEBAPP_PACKAGE_PATH: 'monster-front'      # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '16.18.18'                # set this to the node version to use
 
 permissions:
   contents: read
@@ -41,10 +41,11 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
-        cache-dependency-path: 'monster-front/package-lock.json'
+        cache-dependency-path: 'monster-front/package.json'
+        
 
     - name: npm install, build, and test
-      run: |
+      run:
         npm install
         npm run build --if-present
         npm run test --if-present
