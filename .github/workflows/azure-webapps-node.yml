@@ -41,7 +41,8 @@ jobs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
-        cache-dependency-path: 'monster-front/package-lock.json'
+        cache-dependency-path: 'monster-front/package.json'
+        
 
     - name: npm install, build, and test
       run: |
