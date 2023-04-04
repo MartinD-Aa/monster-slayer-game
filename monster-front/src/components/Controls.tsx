@@ -2,11 +2,14 @@ function Controls(props:
   {player:number, 
     monster:number,
     round: number,
+    gameState: Boolean,
     playerHealth: Function, 
     monsterHealth: Function, 
-    roundCount: Function
+    roundCount: Function,
+    state:Function
   }) {
-    var currentRound = props.round; 
+    var currentRound = props.round;
+    var currentGame = props.gameState;
 
   function attackPlayer(){
     var playerHP = props.player;
@@ -44,7 +47,7 @@ function Controls(props:
 
   function healPlayer(){
     var playerHP = props.player;
-    const heal = randomTall(15, 5);
+    const heal = randomTall(20, 5);
     const hit = randomTall(15, 8);
     if(playerHP + (heal - hit) > 100){
       props.playerHealth(100);
@@ -59,6 +62,8 @@ function Controls(props:
     const num = randomTall(8, 2)
     if(num < 5){
       
+    } else {
+      props.state(!currentGame)
     }
   }
 
@@ -68,13 +73,13 @@ function Controls(props:
 
 
     return (
-    <section id="controls">
+    <section id="controls" className="container">
     <button onClick={attackMonster}>ATTACK</button>
     <button disabled={currentRound % 3 !== 0} onClick={specialAttack}>
       SPECIAL ATTACK
     </button>
     <button onClick={healPlayer}>HEAL</button>
-    <button onClick={}>RUN</button>
+    <button onClick={flee}>RUN</button>
   </section>
   );
 }
