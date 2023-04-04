@@ -2,20 +2,22 @@ function Controls(props:
   {player:number, 
     monster:number,
     round: number,
-    gameState: Boolean,
     playerHealth: Function, 
     monsterHealth: Function, 
     roundCount: Function,
-    state:Function
+    gameState: Function,
   }) {
+    var playerHP = props.player;
+    var monsterHP = props.monster;
     var currentRound = props.round;
-    var currentGame = props.gameState;
+    
+    
 
   function attackPlayer(){
-    var playerHP = props.player;
     const hit = randomTall(15, 8);
     if(playerHP - hit < 0){
       props.playerHealth(0);
+      
     }else{
       props.playerHealth(playerHP-= hit);
     }
@@ -24,10 +26,10 @@ function Controls(props:
   }
 
   function attackMonster(){
-    var monsterHP = props.monster;
     const hit = randomTall(12, 5);
     if(monsterHP - hit < 0){
       props.monsterHealth(0);
+      
     } else{
       props.monsterHealth(monsterHP -= hit);
     }
@@ -35,10 +37,10 @@ function Controls(props:
   }
 
   function specialAttack(){
-    var monsterHP = props.monster;
     const hit = randomTall(20, 15);
     if(monsterHP - hit < 0){
       props.monsterHealth(0);
+      
     } else{
       props.monsterHealth(monsterHP -= hit);
     }
@@ -46,7 +48,6 @@ function Controls(props:
   }
 
   function healPlayer(){
-    var playerHP = props.player;
     const heal = randomTall(20, 5);
     const hit = randomTall(15, 8);
     if(playerHP + (heal - hit) > 100){
@@ -61,9 +62,8 @@ function Controls(props:
   function flee(){
     const num = randomTall(8, 2)
     if(num < 5){
-      
     } else {
-      props.state(!currentGame)
+      props.gameState(false);
     }
   }
 

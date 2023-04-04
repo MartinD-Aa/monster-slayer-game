@@ -28,24 +28,46 @@ function App() {
     setGameSession(gameState);
   };
 
+  const SetDeathState = (deathState: Boolean) => {
+	setDeath(deathState);
+  }
+  if((playerHealth === 0 || monsterHealth === 0) && death === false ){
+	setDeath(true);
+	setGameSession(false);
+  }
+  console.log("Not dead " + turn + " " + playerHealth + " " + monsterHealth);
   return (
     <div className="App">
-      <div className="header">
-        <h1>Monster Slayer</h1>
-      </div>
+		<div className="header">
+        	<h1>Monster Slayer</h1>
+    	</div>
       <Health player={playerHealth} monster={monsterHealth} />
-      <GameOver />
-      <Controls
-        player={playerHealth}
-        monster={monsterHealth}
-        round={turn}
-        gameState={gameSession}
-        playerHealth={SetHealthPlayer}
-        monsterHealth={SetHealthMonster}
-        roundCount={SetCurrentRound}
-        state={SetGameState}
-      />
-      <Log />
+      { gameSession === false ?
+		<GameOver
+		player={playerHealth}
+		monster={monsterHealth}
+		state={gameSession}
+		death={death}
+		playerHealth={SetHealthPlayer}
+		monsterHealth={SetHealthMonster}
+		roundCount={SetCurrentRound}
+		gameState={SetGameState}
+		deathState = {SetDeathState}
+	  />
+	:
+	<div>
+	<Controls
+	player={playerHealth}
+	monster={monsterHealth}
+	round={turn}
+	playerHealth={SetHealthPlayer}
+	monsterHealth={SetHealthMonster}
+	roundCount={SetCurrentRound}
+	gameState={SetGameState}
+  />
+  <Log />
+  </div>
+  }
     </div>
   );
 }
