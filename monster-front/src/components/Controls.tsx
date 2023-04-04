@@ -6,6 +6,7 @@ function Controls(props:
     monsterHealth: Function, 
     roundCount: Function,
     gameState: Function,
+    deathState: Function
   }) {
     var playerHP = props.player;
     var monsterHP = props.monster;
@@ -62,8 +63,10 @@ function Controls(props:
   function flee(){
     const num = randomTall(8, 2)
     if(num < 5){
+      attackPlayer();
     } else {
       props.gameState(false);
+      props.deathState(true);
     }
   }
 

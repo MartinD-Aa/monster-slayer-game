@@ -64,6 +64,7 @@ function App() {
 	monsterHealth={SetHealthMonster}
 	roundCount={SetCurrentRound}
 	gameState={SetGameState}
+	deathState = {SetDeathState}
   />
   <Log />
   </div>
