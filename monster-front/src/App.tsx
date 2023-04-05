@@ -41,7 +41,6 @@ function App() {
 		<div className="header">
         	<h1>Monster Slayer</h1>
     	</div>
-      <Health player={playerHealth} monster={monsterHealth} />
       { gameSession === false ?
 		<GameOver
 		player={playerHealth}
@@ -56,6 +55,7 @@ function App() {
 	  />
 	:
 	<div>
+  <Health player={playerHealth} monster={monsterHealth} />
 	<Controls
 	player={playerHealth}
 	monster={monsterHealth}
